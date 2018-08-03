@@ -26,6 +26,7 @@ getNthElement([1,2,3,4,5,6,100,7,9],1);//Regresa 2
  
 module.exports = getNthElement;
 //--------------------------------------------------------------------------------------------------
+// --------------
 
 //4!
 //Escribe una función llamada areValidCredentials.
@@ -44,16 +45,50 @@ areValidCredentials('Ritu', 'mylongpassword');// De vuelve true
 areValidCredentials('key','mylong');// de vuelve false
 
 //--------------------------------------------------------------------------------------------------
-// 
-//Escribe una función llamada convertScoreToGrade.
+// 5.Dada una lista de números enteros no negativos y una suma objetivo, encuentre un par de números que sumen a la suma objetivo.
+
+const findPairForSum=(array, number)=> {
+  let pair =[];
+for(let i = 0; i <array.length; i++){
+    for(let j = i; j <array.length; j++ ){
+      if(array[i] + array[j] === number){
+        pair = [array[i], array[j]];
+      }
+    }
+  }
+return pair;
+}
+module.exports = findPairForSum;
+
+
+
+// ------------------------------------------------
+//16.Escribe una función llamada convertScoreToGrade.
 //Dada una puntuación, convertScoreToGrade devuelve una cadena que representa el grado de letra correspondiente a la puntuación dada.
 
-const convertScoreToGrade = (score >100 < 0) =>{
-  if(score ){
-    const text = true;
-    return text;
-  }else{
-    const text = false;
-    return text;
+const convertScoreToGrade = (score) =>{
+  // your code here
+ 
+  if(score >100 || score < 0){
+   return "PUNTUACION INVALIDA";
   }
+  if(score >=90) {
+   return "A";
+  }
+  else if (score >=80){
+    return  "B";
+  }
+ else if (score >= 70){
+    return  "C";
+  }
+  else if (score >= 60){
+    return  "D";
+  }
+  else {
+    return 'F';
+  }
+  const output = convertScoreToGrade(102);
+  console.log(output);
 };
+
+module.exports = convertScoreToGrade;
